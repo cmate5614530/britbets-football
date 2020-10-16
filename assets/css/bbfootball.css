@@ -1,0 +1,632 @@
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.5.3
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.hide {
+  display: none !important; }
+
+.invisible {
+  visibility: hidden; }
+
+@media screen and (max-width: 39.99875em) {
+  .hide-for-small-only {
+    display: none !important; } }
+
+@media screen and (max-width: 0em), screen and (min-width: 40em) {
+  .show-for-small-only {
+    display: none !important; } }
+
+@media print, screen and (min-width: 40em) {
+  .hide-for-medium {
+    display: none !important; } }
+
+@media screen and (max-width: 39.99875em) {
+  .show-for-medium {
+    display: none !important; } }
+
+@media screen and (min-width: 40em) and (max-width: 63.99875em) {
+  .hide-for-medium-only {
+    display: none !important; } }
+
+@media screen and (max-width: 39.99875em), screen and (min-width: 64em) {
+  .show-for-medium-only {
+    display: none !important; } }
+
+@media print, screen and (min-width: 64em) {
+  .hide-for-large {
+    display: none !important; } }
+
+@media screen and (max-width: 63.99875em) {
+  .show-for-large {
+    display: none !important; } }
+
+@media screen and (min-width: 64em) and (max-width: 74.99875em) {
+  .hide-for-large-only {
+    display: none !important; } }
+
+@media screen and (max-width: 63.99875em), screen and (min-width: 75em) {
+  .show-for-large-only {
+    display: none !important; } }
+
+.show-for-sr,
+.show-on-focus {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0; }
+
+.show-on-focus:active, .show-on-focus:focus {
+  position: static !important;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal; }
+
+.show-for-landscape,
+.hide-for-portrait {
+  display: block !important; }
+  @media screen and (orientation: landscape) {
+    .show-for-landscape,
+    .hide-for-portrait {
+      display: block !important; } }
+  @media screen and (orientation: portrait) {
+    .show-for-landscape,
+    .hide-for-portrait {
+      display: none !important; } }
+
+.hide-for-landscape,
+.show-for-portrait {
+  display: none !important; }
+  @media screen and (orientation: landscape) {
+    .hide-for-landscape,
+    .show-for-portrait {
+      display: none !important; } }
+  @media screen and (orientation: portrait) {
+    .hide-for-landscape,
+    .show-for-portrait {
+      display: block !important; } }
+
+.bbfootball-accordion {
+  margin-left: 0;
+  background: #fefefe;
+  list-style-type: none;
+  padding: 0; }
+  .bbfootball-accordion[disabled] .accordion-title {
+    cursor: not-allowed; }
+  .bbfootball-accordion .accordion-item:first-child > :first-child {
+    border-radius: 0 0 0 0; }
+  .bbfootball-accordion .accordion-item:last-child > :last-child {
+    border-radius: 0 0 0 0; }
+  .bbfootball-accordion .accordion-title {
+    position: relative;
+    display: block;
+    padding: 1.25rem 1rem;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: #1779ba; }
+    :last-child:not(.is-active) > .bbfootball-accordion .accordion-title {
+      border-bottom: 1px solid #e6e6e6;
+      border-radius: 0 0 0 0; }
+    .bbfootball-accordion .accordion-title:hover, .bbfootball-accordion .accordion-title:focus {
+      background-color: #e6e6e6; }
+    .bbfootball-accordion .accordion-title::before {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      margin-top: -0.5rem;
+      content: '+'; }
+    .is-active > .bbfootball-accordion .accordion-title::before {
+      content: '\2013'; }
+  .bbfootball-accordion .accordion-content {
+    display: none;
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
+    background-color: #fefefe;
+    color: #0a0a0a; }
+    :last-child > .bbfootball-accordion .accordion-content:last-child {
+      border-bottom: 1px solid #e6e6e6; }
+
+.bbfootball-accordion-menu,
+.bbfootball-accordion-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .bbfootball-accordion-menu li,
+  .bbfootball-accordion-menu ul li {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6; }
+    .bbfootball-accordion-menu li > a,
+    .bbfootball-accordion-menu ul li > a {
+      display: block;
+      padding: 0 1rem;
+      line-height: 40px; }
+  .bbfootball-accordion-menu ul.children,
+  .bbfootball-accordion-menu ul ul.children {
+    background: #e6e6e6;
+    font-size: 90%;
+    list-style: none;
+    margin: 0; }
+    .bbfootball-accordion-menu ul.children a,
+    .bbfootball-accordion-menu ul ul.children a {
+      display: block;
+      position: relative;
+      color: #8a8a8a;
+      line-height: 1;
+      padding: 0.5rem 1rem; }
+      .bbfootball-accordion-menu ul.children a:hover,
+      .bbfootball-accordion-menu ul ul.children a:hover {
+        color: #0a0a0a; }
+  .bbfootball-accordion-menu .has-submenu,
+  .bbfootball-accordion-menu ul .has-submenu {
+    position: relative; }
+    .bbfootball-accordion-menu .has-submenu > a,
+    .bbfootball-accordion-menu ul .has-submenu > a {
+      margin-right: 40px; }
+    .bbfootball-accordion-menu .has-submenu .submenu-toggle,
+    .bbfootball-accordion-menu ul .has-submenu .submenu-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      text-align: center;
+      line-height: inherit; }
+      .bbfootball-accordion-menu .has-submenu .submenu-toggle span,
+      .bbfootball-accordion-menu ul .has-submenu .submenu-toggle span {
+        display: none; }
+      .bbfootball-accordion-menu .has-submenu .submenu-toggle:after,
+      .bbfootball-accordion-menu ul .has-submenu .submenu-toggle:after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        content: '+';
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+
+.bbfootball-events-list {
+  display: block;
+  width: 100%; }
+  .bbfootball-events-list::before, .bbfootball-events-list::after {
+    display: table;
+    content: ' ';
+    flex-basis: 0;
+    order: 1; }
+  .bbfootball-events-list::after {
+    clear: both; }
+  .bbfootball-events-list header {
+    display: none; }
+  .bbfootball-events-list .bbfootball-event-summary {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 0.5rem 0; }
+    .bbfootball-events-list .bbfootball-event-summary .event-info {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0; }
+      @media print, screen and (min-width: 64em) {
+        .bbfootball-events-list .bbfootball-event-summary .event-info {
+          flex: 0 0 41.66667%;
+          max-width: 41.66667%;
+          padding-right: 0;
+          padding-left: 0; } }
+      .bbfootball-events-list .bbfootball-event-summary .event-info h4 {
+        display: block;
+        font-weight: normal;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        color: #0a0a0a; }
+    .bbfootball-events-list .bbfootball-event-summary .event-odds {
+      margin-top: 1rem;
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0; }
+      @media print, screen and (min-width: 64em) {
+        .bbfootball-events-list .bbfootball-event-summary .event-odds {
+          margin-top: 0;
+          flex: 0 0 58.33333%;
+          max-width: 58.33333%;
+          padding-right: 0;
+          padding-left: 0;
+          align-items: center;
+          justify-content: center;
+          align-self: center;
+          align-content: center; } }
+      .bbfootball-events-list .bbfootball-event-summary .event-odds ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap; }
+        .bbfootball-events-list .bbfootball-event-summary .event-odds ul > li {
+          width: calc(25% - 1.25rem);
+          margin-left: 0.625rem;
+          margin-right: 0.625rem;
+          text-align: center;
+          font-size: 90%; }
+          .bbfootball-events-list .bbfootball-event-summary .event-odds ul > li img {
+            height: 40px;
+            width: auto; }
+      .bbfootball-events-list .bbfootball-event-summary .event-odds .button {
+        margin: 0 !important; }
+
+.event-meta {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .event-meta li {
+    display: inline-block;
+    font-size: 70%;
+    width: 45%; }
+    .event-meta li.date, .event-meta li.time {
+      text-transform: uppercase;
+      position: relative; }
+    .event-meta li.country, .event-meta li.league {
+      width: auto;
+      min-width: 10%; }
+    @media print, screen and (min-width: 40em) {
+      .event-meta li {
+        width: auto; } }
+    .event-meta li .dashicons {
+      display: inline-block;
+      line-height: 1;
+      font-size: 15px; }
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 1rem; }
+  table img {
+    max-width: 40px;
+    height: auto; }
+
+.dropdown-pane {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 300px;
+  padding: 1rem;
+  visibility: hidden;
+  border: 1px solid #cacaca;
+  border-radius: 0;
+  background-color: #fefefe;
+  font-size: 1rem; }
+  .dropdown-pane.is-opening {
+    display: block; }
+  .dropdown-pane.is-open {
+    display: block;
+    visibility: visible; }
+  @media print, screen and (min-width: 64em) {
+    .dropdown-pane {
+      max-height: 300px;
+      overflow-y: auto; } }
+  .dropdown-pane ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .dropdown-pane ul li {
+      display: block; }
+      .dropdown-pane ul li a {
+        font-size: 90%; }
+
+.bbfootball-ajax-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #fefefe;
+  z-index: 900; }
+  .bbfootball-ajax-loader:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    content: '';
+    background: #1779ba; }
+
+.bbfootball-league-holder header {
+  color: #fefefe;
+  background: #1779ba;
+  position: relative; }
+  .bbfootball-league-holder header h1, .bbfootball-league-holder header h2, .bbfootball-league-holder header h3, .bbfootball-league-holder header h4, .bbfootball-league-holder header h5, .bbfootball-league-holder header h6 {
+    line-height: 40px;
+    margin: 0 1rem; }
+  .bbfootball-league-holder header a {
+    color: inherit; }
+  .bbfootball-league-holder header button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    color: #fefefe; }
+  body.single-league .bbfootball-league-holder header {
+    display: none; }
+
+.bbfootball-league-holder h4 {
+  display: block;
+  margin: 1rem 0;
+  font-weight: bold;
+  color: #1779ba; }
+
+.bbfootball-no-odds {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap; }
+  .bbfootball-no-odds > span {
+    flex: 1 1 0px;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    min-width: 0;
+    height: 50px;
+    text-align: center;
+    position: relative; }
+    @media print, screen and (min-width: 40em) {
+      .bbfootball-no-odds > span {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .bbfootball-no-odds > span:before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 40px;
+      height: 50px;
+      background: #e6e6e6;
+      content: '';
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
+    .bbfootball-no-odds > span:last-of-type:before {
+      display: none; }
+  .bbfootball-no-odds > p {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    background: rgba(254, 254, 254, 0.4);
+    text-transform: uppercase;
+    font-size: 80%;
+    line-height: 30px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    font-weight: bold;
+    margin: 0; }
+    @media print, screen and (min-width: 40em) {
+      .bbfootball-no-odds > p {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+
+.switch {
+  height: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+  outline: 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #fefefe;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.switch-input {
+  position: absolute;
+  margin-bottom: 0;
+  opacity: 0; }
+
+.switch-paddle {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 0;
+  background: #cacaca;
+  transition: all 0.25s ease-out;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer; }
+  input + .switch-paddle {
+    margin: 0; }
+  .switch-paddle::after {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    border-radius: 0;
+    background: #fefefe;
+    transition: all 0.25s ease-out;
+    content: ''; }
+  input:checked ~ .switch-paddle {
+    background: #1779ba; }
+    input:checked ~ .switch-paddle::after {
+      left: 2.25rem; }
+  [data-whatinput='mouse'] input:focus ~ .switch-paddle {
+    outline: 0; }
+
+.switch-active, .switch-inactive {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.switch-active {
+  left: 8%;
+  display: none; }
+  input:checked + label > .switch-active {
+    display: block; }
+
+.switch-inactive {
+  right: 15%; }
+  input:checked + label > .switch-inactive {
+    display: none; }
+
+.switch.tiny {
+  height: 1.5rem; }
+  .switch.tiny .switch-paddle {
+    width: 3rem;
+    height: 1.5rem;
+    font-size: 0.625rem; }
+  .switch.tiny .switch-paddle::after {
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1rem;
+    height: 1rem; }
+  .switch.tiny input:checked ~ .switch-paddle::after {
+    left: 1.75rem; }
+
+.switch.small {
+  height: 1.75rem; }
+  .switch.small .switch-paddle {
+    width: 3.5rem;
+    height: 1.75rem;
+    font-size: 0.75rem; }
+  .switch.small .switch-paddle::after {
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem; }
+  .switch.small input:checked ~ .switch-paddle::after {
+    left: 2rem; }
+
+.switch.large {
+  height: 2.5rem; }
+  .switch.large .switch-paddle {
+    width: 5rem;
+    height: 2.5rem;
+    font-size: 1rem; }
+  .switch.large .switch-paddle::after {
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 2rem;
+    height: 2rem; }
+  .switch.large input:checked ~ .switch-paddle::after {
+    left: 2.75rem; }
+
+.bbfootball-odds-switcher {
+  display: block;
+  text-align: right;
+  margin-bottom: 1rem;
+  background: #fefefe; }
+  .bbfootball-odds-switcher::before, .bbfootball-odds-switcher::after {
+    display: table;
+    content: ' ';
+    flex-basis: 0;
+    order: 1; }
+  .bbfootball-odds-switcher::after {
+    clear: both; }
+  .bbfootball-odds-switcher p {
+    margin: 8px 1rem 0 0;
+    text-transform: uppercase;
+    font-size: 80%;
+    display: inline-block; }
+  .bbfootball-odds-switcher .switch {
+    display: inline-block;
+    float: right;
+    width: auto;
+    margin: 0; }
+  .bbfootball-odds-switcher .switch-paddle {
+    width: 130px;
+    background: #e6e6e6;
+    display: inline-block;
+    color: #8a8a8a; }
+    .bbfootball-odds-switcher .switch-paddle:after {
+      background: #1779ba; }
+  .bbfootball-odds-switcher input:checked ~ .switch-paddle {
+    background: #e6e6e6; }
+    .bbfootball-odds-switcher input:checked ~ .switch-paddle:after {
+      left: calc(130px - (1rem * 2)); }
+  .bbfootball-odds-switcher .last-update {
+    clear: both;
+    text-transform: uppercase;
+    font-size: 70%;
+    line-height: 40px;
+    font-weight: bold; }
+
+.event-odds-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse; }
+  .event-odds-table thead {
+    border-bottom: 3px solid #1779ba; }
+    .event-odds-table thead .odds-column {
+      padding: 5px 0; }
+  .event-odds-table tbody th, .event-odds-table tbody td {
+    padding: 5px; }
+    .event-odds-table tbody th.odds-column, .event-odds-table tbody td.odds-column {
+      font-weight: normal !important; }
+      .event-odds-table tbody th.odds-column:hover, .event-odds-table tbody td.odds-column:hover {
+        background: #1779ba; }
+        .event-odds-table tbody th.odds-column:hover a, .event-odds-table tbody td.odds-column:hover a {
+          color: #fefefe; }
+  .event-odds-table tbody tr:hover {
+    background: #f3f3f3; }
+  .event-odds-table .name-column {
+    width: 150px;
+    border-bottom: 1px solid #e6e6e6; }
+  .event-odds-table .odds-column {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6; }
+
+.markets-dropdown-button {
+  position: relative; }
+  .markets-dropdown-button > .button {
+    padding-right: 20px !important;
+    position: relative; }
+    .markets-dropdown-button > .button .dashicons {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      font-size: 18px;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+  .markets-dropdown-button ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .markets-dropdown-button ul a {
+      display: block;
+      font-size: 13px !important;
+      text-transform: uppercase;
+      line-height: 35px; }
+  .markets-dropdown-button .dropdown-pane {
+    width: 100% !important;
+    padding-top: 0 !important; }

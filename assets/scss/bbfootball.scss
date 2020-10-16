@@ -1,0 +1,449 @@
+// Import Foundation so we can use their mixins
+@import "foundation";
+@include foundation-visibility-classes;
+.bbfootball-accordion {
+  @include accordion-container;
+  padding: 0;
+
+  .accordion-item {
+    @include accordion-item;
+  }
+  .accordion-title {
+    @include accordion-title;
+  }
+  .accordion-content {
+    @include accordion-content;
+  }
+}
+
+.bbfootball-accordion-menu,
+.bbfootball-accordion-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    width: 100%;
+    border-bottom: 1px solid $light-gray;
+
+    > a {
+      display: block;
+      padding: 0 $global-padding;
+      line-height: 40px;
+    }
+
+    // &:hover {
+    //   background-color: $light-gray;
+    // }
+
+    &.is-active { }
+  }
+
+  ul.children {
+    background: $light-gray;
+    font-size: 90%;
+    list-style: none;
+    margin: 0;
+
+    a {
+      display: block;
+      position: relative;
+      color: $dark-gray;
+      line-height: 1;
+      padding: $global-padding / 2 $global-padding;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  .has-submenu {
+    position: relative;
+    > a {
+      margin-right: 40px;
+    }
+
+    .submenu-toggle {
+      position: absolute;
+      top: 0; right: 0;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      text-align: center;
+      line-height: inherit;
+      span {
+        display: none;
+      }
+
+      &:after {
+        position: absolute;
+        top: 50%; left: 0;
+        width: 100%;
+        text-align: center;
+        content: '+';
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.bbfootball-events-list {
+  display: block;
+  width: 100%;
+  @include clearfix;
+
+  header { display: none; }
+
+  .bbfootball-event-summary {
+    @include flex-grid-row;
+    border-bottom: 1px solid $light-gray;
+    padding: $global-padding / 2 0;
+
+    .event-info {
+      @include flex-grid-column(12, 0);
+      @include breakpoint(large) {
+        @include flex-grid-column(5, 0);
+      }
+
+      h4 {
+        display: block;
+        font-weight: normal;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        color: $black;
+      }
+    }
+
+    .event-odds {
+      margin-top: $global-margin;
+      @include flex-grid-column(12, 0);
+      @include breakpoint(large) {
+        margin-top: 0;
+        @include flex-grid-column(7, 0);
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        align-content: center;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include xy-grid;
+        > li {
+          @include xy-cell-static(1 of 4);
+          text-align: center;
+          font-size: 90%;
+          img {
+            height: 40px;
+            width: auto;
+          }
+        }
+      }
+
+      .button {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+.event-meta {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    font-size: 70%;
+    width: 45%;
+    &.date,
+    &.time {
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    &.country,
+    &.league {
+      width: auto;
+      min-width: 10%;
+    }
+
+    @include breakpoint(medium) {
+      width: auto;
+    }
+
+    .dashicons {
+      display: inline-block;
+      line-height: 1;
+      font-size: 15px;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: $global-margin;
+
+  img {
+    max-width: 40px;
+    height: auto;
+  }
+}
+
+.dropdown-pane {
+  @include dropdown-container;
+  @include breakpoint(large) {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: block;
+
+      a {
+        font-size: 90%;
+      }
+    }
+  }
+}
+
+.bbfootball-ajax-loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 5px;
+  background: $white;
+  z-index: 900;
+
+  &:after {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0;
+    height: 100%;
+    content: '';
+    background: $primary-color;
+  }
+}
+
+.bbfootball-league-holder {
+  header {
+    color: $white;
+    background: $primary-color;
+    position: relative;
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 40px;
+      margin: 0 $global-margin;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      position: absolute;
+      top: 0; right: 0;
+      width: 40px;
+      height: 40px;
+      color: $white;
+    }
+    body.single-league & {
+      display: none;
+    }
+  }
+
+  h4 {
+    display: block;
+    margin: $global-margin 0;
+    font-weight: bold;
+    color: $primary-color;
+  }
+}
+
+.bbfootball-no-odds {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  @include flex-grid-row;
+
+  > span {
+    @include flex-grid-column;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 0; left: 50%;
+      width: 40px;
+      height: 50px;
+      background: $light-gray;
+      content: '';
+      transform: translateX(-50%);
+    }
+
+    &:last-of-type {
+      &:before {
+        display: none;
+      }
+    }
+
+  }
+
+  > p {
+    position: absolute;
+    left: $global-margin;
+    top: 50%;
+    background: rgba($white, 0.4);
+    text-transform: uppercase;
+    font-size: 80%;
+    line-height: 30px;
+    transform: translateY(-50%);
+    @include flex-grid-column(3 of 4);
+    font-weight: bold;
+    margin: 0;
+  }
+
+}
+@include foundation-switch;
+.bbfootball-odds-switcher {
+  display: block;
+  text-align: right;
+  @include clearfix;
+  margin-bottom: $global-margin;
+  background: $white;
+
+  p {
+    margin: 8px $global-margin 0 0;
+    text-transform: uppercase;
+    font-size: 80%;
+    display: inline-block;
+  }
+
+  .switch {
+    display: inline-block;
+    float: right;
+    width: auto;
+    margin: 0;
+  }
+
+
+  .switch-paddle {
+    width: 130px;
+    background: $light-gray;
+    display: inline-block;
+    color: $dark-gray;
+    &:after {
+      background: $primary-color;
+    }
+  }
+
+  input:checked ~ .switch-paddle {
+    background: $light-gray;
+    &:after {
+      left: calc(130px - (#{$global-margin} * 2));
+    }
+  }
+
+  .last-update {
+    clear: both;
+    text-transform: uppercase;
+    font-size: 70%;
+    line-height: 40px;
+    font-weight: bold;
+  }
+}
+
+
+.event-odds-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  thead {
+    border-bottom: 3px solid $primary-color;
+    .odds-column {
+      padding: 5px 0;
+    }
+  }
+
+  tbody {
+    th, td {
+      padding: 5px;
+
+      &.odds-column {
+        font-weight: normal !important;
+        &:hover {
+          background: $primary-color;
+          a {
+            color:  $white;
+          }
+        }
+      }
+    }
+
+    tr {
+      &:hover {
+        background: lighten($light-gray, 5%);
+      }
+    }
+  }
+
+  .name-column {
+    width: 150px;
+    border-bottom: 1px solid $light-gray;
+  }
+
+  .odds-column {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-left: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+  }
+}
+
+
+.markets-dropdown-button {
+  position: relative;
+
+  > .button {
+    padding-right: 20px !important;
+    position: relative;
+    .dashicons {
+      position: absolute;
+      top: 50%; right: 10px;
+      font-size: 18px;
+      transform: translateY(-50%);
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    a {
+      display: block;
+      font-size: 13px !important;
+      text-transform: uppercase;
+      line-height: 35px;
+    }
+  }
+
+  .dropdown-pane {
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+}
