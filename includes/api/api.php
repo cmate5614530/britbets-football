@@ -51,9 +51,8 @@ if(!class_exists('BBF_Api')) {
      * Class constructor
      */
     public function __construct() {
-      // $this->base_url = "http://britbetsapi.swipe72.co.uk";
-      // $this->base_url = "http://swipe-api.test";
-      $this->base_url = 'http://britbets.com/api/';
+
+      $this->base_url = '';
     }
 
     /**
